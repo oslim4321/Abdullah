@@ -178,14 +178,16 @@ const CommentList = ({ comments, documentId, setComments, fetchEnquires }) => {
                   <div>
                     <div className="flex">
                       <h2 className="text-black  text-base font-medium leading-6">
-                        View All {comment.replies.length} Replies
+                        {comment.replies.lenght == 1
+                          ? `View Comment `
+                          : ` View All ${comment.replies.length} Replies`}
                       </h2>
                       <p className="text-[#777] font-roboto text-base font-normal leading-6">
                         5 days ago
                       </p>
                     </div>
 
-                    <Replies />
+                    <Replies replies={comment.replies} />
                   </div>
                 )}
               </div>
