@@ -15,6 +15,7 @@ import CommentList from "../../components/CommentsList";
 import CreateOffer from "../../components/CreateOffer";
 import { useAuth } from "../../context/AuthProvider";
 import Link from "next/link";
+import CommentListStatic from "../../components/CommentListStatic";
 
 const { TextArea } = Input;
 
@@ -140,10 +141,15 @@ const InquiryDetails = () => {
                   );
                 })}
               </Carousel>
-              <TextArea readOnly value={information?.text} />
+              {/* <TextArea readOnly value={information?.text} /> */}
             </div>
           )}
-          {/* <CommentList documentId={information?.id} setComments={setComments} comments={comments} /> */}
+          <CommentList
+            documentId={information?.id}
+            setComments={setComments}
+            comments={comments}
+          />
+          {/* <CommentListStatic /> */}
         </div>
       </Spin>
 
